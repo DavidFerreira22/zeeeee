@@ -34,8 +34,6 @@ jobs:
         run: |
           ls -all
           docker build -t zezezeacr.azurecr.io/ze:v1 .
-              echo "${{ secrets.zepass }}" | docker login zezezeacr.azurecr.io \
-              --username "${{ secrets.ze }}" \
-              --password-stdin
+          docker login -u ${{secrets.ze}} -p ${{secrets.zepass}} zezezeacr.azurecr.io
           docker push zezezeacr.azurecr.io/ze:v1
           echo zeeeeeeeeeeeeeeeeeeeeeee
