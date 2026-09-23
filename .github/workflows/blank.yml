@@ -33,7 +33,6 @@ jobs:
       - name: Ze
         run: |
           ls -all
-          ls -la hello
           docker build -t zezezeacr.azurecr.io/ze:v1
           docker login -u ${{secrets.ze}} -p ${{secrets.zepass}} zezezeacr.azurecr.io
           docker push zezezeacr.azurecr.io/ze:v1
